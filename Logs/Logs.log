@@ -6,3 +6,23 @@
 2017-11-09 18:38:18 INFO  properties:129 - AddTo MyBasket
 2017-11-09 18:40:18 INFO  properties:67 - Sweet Search
 2017-11-09 18:41:05 INFO  properties:129 - AddTo MyBasket
+2017-11-11 10:35:34 INFO  properties:131 - AddTo MyBasket
+2017-11-11 10:52:07 INFO  properties:139 - AddTo MyBasket
+2017-11-11 12:13:43 INFO  properties:143 - AddTo MyBasket
+2017-11-11 12:15:51 INFO  properties:81 - Sweet Search
+2017-11-11 12:17:54 INFO  properties:258 - BBCancelMyOrder
+2017-11-11 12:19:58 INFO  properties:216 - BBDecreaseItemQuantity
+2017-11-11 12:22:14 INFO  properties:168 - BBEmpty Basket
+2017-11-11 12:24:24 INFO  properties:326 - BBFilterOnContents
+2017-11-11 12:26:27 INFO  properties:302 - BBFilterOnFlavour
+2017-11-11 12:28:28 INFO  properties:274 - BBFilterOnPrice
+2017-11-11 12:30:30 INFO  properties:185 - BBIncreaseItemQuantity
+2017-11-11 12:32:48 INFO  properties:357 - BBMoreStores
+2017-11-11 12:35:37 INFO  properties:231 - BBRemoveItemFromMyBasket
+2017-11-11 13:13:52 INFO  properties:165 - AddTo MyBasket
+2017-11-11 14:33:23 INFO  properties:167 - AddTo MyBasket
+2017-11-11 14:35:27 INFO  properties:103 - Sweet Search
+2017-11-11 15:01:46 INFO  properties:169 - AddTo MyBasket
+2017-11-11 15:04:14 INFO  properties:105 - Sweet Search
+2017-11-11 16:19:04 INFO  properties:173 - AddTo MyBasket
+2017-11-11 16:21:32 INFO  properties:109 - Sweet Search

@@ -6,8 +6,8 @@ public interface Constants {
 	//String Username="beenasingh.c@testyantra.com";
 	//String Password="A12345678";
 	String Browser="Chrome";
-	String ChromeDriver="/src/main/resources/chromedriver";
-	String GeckoDriver="/home/tyss/Documents/BIGBasketMaven/BB/src/main/resources/geckodriver";
+	String ChromeDriver="/BB/src/main/resources/chromedriver";
+	String GeckoDriver="/BB/src/main/resources/geckodriver";
 	
 	
 	

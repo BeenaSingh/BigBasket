@@ -88,7 +88,8 @@ public class BaseLib extends ExcelLib implements Constants {
 		 bbh.getLoginButton().click();
 		 
 		 Thread.sleep(20000);
-		// bbh.ContinuePopup();
+		 driver.navigate().refresh();
+		//bbh.ContinuePopup();
 		 
 		 Reporter.log("Login Function");
 		

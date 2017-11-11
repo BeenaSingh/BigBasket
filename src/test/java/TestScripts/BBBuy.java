@@ -11,6 +11,31 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
@@ -34,6 +59,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import GeneralLib.ActionLib;
 import GeneralLib.BaseLib;
+import GeneralLib.BasePage;
 import GeneralLib.ExcelLib;
 import ObjectRepo.BBCheckout;
 import ObjectRepo.BBCheckoutAddress;
@@ -47,28 +73,46 @@ import ObjectRepo.BBSpecialityProductDetail;
 public class BBBuy extends BaseLib 
 {
 	
-	BBHome bbh=PageFactory.initElements(driver, BBHome.class);
-	BBProductList bbpdl=PageFactory.initElements(driver, BBProductList.class);
-	ActionLib actlib=PageFactory.initElements(driver, ActionLib.class);
-	BBProductDetail bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-	BBMyBasket bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-	BBCheckout bbco=PageFactory.initElements(driver, BBCheckout.class);
-	BBCheckoutAddress bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-	ExcelLib ex=PageFactory.initElements(driver, ExcelLib.class);
-	BBSpeciality bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-	BBSpecialityProductDetail bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+	BBHome bbh;
+	BBProductList bbpdl;
+	BBProductDetail bbpdt;
+	BBMyBasket bbmb;
+	BBCheckout bbco;
+	BBCheckoutAddress bbcoa;
+	ExcelLib ex;
+	BBSpeciality bbspc;
+	BBSpecialityProductDetail bbspcdt;
+	ActionLib actlib;
+	BasePage bp;
+	String exp;
+	String act;
+	
 	
 	public ExtentTest logger;
 	
 	@Test
 	public void BBBuySweets() throws Throwable
 	{
+		     bbh=PageFactory.initElements(driver, BBHome.class);
+		     bbpdl=PageFactory.initElements(driver, BBProductList.class);
+			 actlib=PageFactory.initElements(driver, ActionLib.class);
+			 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+			 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+			 bbco=PageFactory.initElements(driver, BBCheckout.class);
+			 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+			 ex=PageFactory.initElements(driver, ExcelLib.class);
+			 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+			 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+			 bp=PageFactory.initElements(driver, BasePage.class);
+		 
 		Thread.sleep(5000);
 		log.info("Sweet Search");
 		
 		//logger.log(LogStatus.INFO, "Enter Sweets in search Box");
 		Thread.sleep(5000);
+		
 		bbh.getSearchBox().sendKeys("Sweets");
+
 		bbh.getSearchEnterBtn().click();
 		Reporter.log("Enter Sweets in search Box",true);
 		
@@ -142,6 +186,9 @@ public class BBBuy extends BaseLib
 		
 		bbspcdt.AddToMyBasketSpeciality();
 		Reporter.log("BBSpeciality Sweets and Savouries Item Added to MyBasket",true);
+		
+	   
+		
 	
 		
 	}

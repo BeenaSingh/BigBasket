@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class BBProductDetail {
 	
-	@FindBy(xpath="(//a[@qa='add')[5]")
+	@FindBy(xpath="(//div[@qa='cart']/input)[1]")
 	private WebElement AddToBasketBtn;
 
 	public WebElement getAddToBasketBtn() {

@@ -52,6 +52,13 @@ public class ActionLib extends BaseLib
         js.executeScript("window.scrollBy("+hvalue+","+vvalue+")");
 
     }
+	
+	public void VerifyTest(WebElement element)
+	{
+		WebDriverWait wait=new WebDriverWait(BaseLib.driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		
+	}
 	public void Alert(String value)
 	{
 		org.openqa.selenium.Alert alt=driver.switchTo().alert();
