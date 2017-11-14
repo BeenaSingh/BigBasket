@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class BBMyBasket {
 	
-	@FindBy(xpath="//a[contains(text(),'Rasgulla ')]")
+	@FindBy(xpath="//a[contains(text(),'Rasgulla')]")
 	private WebElement FirstItem;
 	
 	
-	@FindBy(xpath="//a[contains(text(),'Mixed Fruit Jam ')]")
+	@FindBy(xpath="//a[contains(text(),'Jam - Mixed Fruit')]")
 	private WebElement SecondItem;
 
 

@@ -16,15 +16,12 @@
           <include name="BBEmptyBasket"/>
           <include name="configBeforeMethod"/>
           <include name="BBMoreStores"/>
+          <include name="confiBeforeSuite"/>
           <include name="configBeforeClass"/>
+          <include name="configAfterMethod"/>
           <include name="BBAddToMyBasket"/>
         </methods>
       </class> <!-- TestScripts.BBBuy -->
-      <class name="TestScripts.MYBBSearch">
-        <methods>
-          <include name="confiBeforeSuite"/>
-        </methods>
-      </class> <!-- TestScripts.MYBBSearch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

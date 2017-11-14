@@ -11,6 +11,12 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
@@ -122,8 +128,20 @@ public class BBBuy extends BaseLib
 		bbpdl.SelectProduct();
 		Reporter.log("Sweet product is displayed", true);
 		
-		bbpdt.AddToBasket();
-		Reporter.log("Item added to Basket", true);
+		try{
+			//String Add=bbpdt.
+			//bbpdt.AddToBasket();
+			//Reporter.log("Item added to Basket", true);
+			
+			bbpdt.AddTo1InBasket();
+			Reporter.log("1 Item added to Basket", true);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		//bbpdt.AddToBasket();
+		//Reporter.log("Item added to Basket", true);
 		
 		bbpdt.BBCart();
 		Reporter.log("Cart No increases", true);
@@ -135,7 +153,7 @@ public class BBBuy extends BaseLib
 		
 		SoftAssert s=new SoftAssert();
 		String exp1="Rasgulla";
-		String exp2="Mixed Fruit Jam";
+		String exp2="Jam - Mixed Fruit";
 		String act1=bbmb.getFirstItem().getText();
 		String act2=bbmb.getSecondItem().getText();
 		AssertJUnit.assertEquals(act1, exp1);

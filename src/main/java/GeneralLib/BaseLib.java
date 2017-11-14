@@ -101,7 +101,8 @@ public class BaseLib extends ExcelLib implements Constants {
 
 		ActionLib actlib = PageFactory.initElements(driver, ActionLib.class);
 		WebElement logsel = bbh.getLogoutHover();
-		actlib.MouseAction(logsel);
+		logsel.click();
+		//actlib.MouseAction(logsel);
 		Thread.sleep(2000);
 
 		bbh.logout();

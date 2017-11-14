@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class BBProductDetail {
 	
-	@FindBy(xpath="(//div[@qa='cart']/input)[1]")
+	@FindBy(xpath="(//input[@id='id-product-id']/../div[2]/div[4]/div[2]/li[1]/div[1]/a[1])[1]")
 	private WebElement AddToBasketBtn;
 
 	public WebElement getAddToBasketBtn() {
@@ -17,8 +17,20 @@ public class BBProductDetail {
 		AddToBasketBtn.click();
 	}
 	
+	@FindBy(xpath="(//div[@qa='cart']/input)[1]")
+	private WebElement Add1InBasketBtn;
 	
-	@FindBy(xpath="//a[@class='btn btn-default basket-btn-drop hidden-xs hidden-sm']")
+	
+	public WebElement getAdd1InBasketBtn() {
+		return Add1InBasketBtn;
+	}
+	public void AddTo1InBasket()
+	{
+		Add1InBasketBtn.click();
+	}
+	
+
+	@FindBy(xpath="//div[@class='my-basket-btn']")
 	private WebElement BBCart;
 
 	public WebElement getBBCart() {

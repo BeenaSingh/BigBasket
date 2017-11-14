@@ -18,7 +18,6 @@
           <include name="BBMoreStores"/>
           <include name="confiBeforeSuite"/>
           <include name="configBeforeClass"/>
-          <include name="configAfterMethod"/>
           <include name="BBAddToMyBasket"/>
         </methods>
       </class> <!-- TestScripts.BBBuy -->
