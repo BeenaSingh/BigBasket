@@ -23,7 +23,7 @@ public class BBHome {
 	@FindBy(name = "Submit")
 	private WebElement LoginButton;
 
-	@FindBy(xpath = "//i[@class='icon svg-header svg-user-active svg-user-active-dim']")
+	@FindBy(xpath = "//i[@class='icon svg-user-active svg-header svg-user-active-dim']")
 	private WebElement LogoutHover;
 	
 	@FindBy(id="input")
@@ -50,9 +50,10 @@ public class BBHome {
 		return LogoutButton;
 	}
 
-	@FindBy(xpath ="//a[text()='Logout']") 
+	@FindBy(xpath ="//div[@id='headerControllerId']/div[3]/header[1]//ul[1]/li[3]//li[6]/a[1]")
+			//"//a[text()='Logout']") 
 			//"//div[@id='headerControllerId']/div[3]/header[1]//ul[1]/li[3]//li[6]/a[1]")
-	//div[@id='headerControllerId']/div[3]/header[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/div[1]/ul[1]/li[1]/div[1]/ul[1]/li[6]/a[1]
+	        //div[@id='headerControllerId']/div[3]/header[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/div[1]/ul[1]/li[1]/div[1]/ul[1]/li[6]/a[1]
 	private WebElement LogoutButton;
 	public void logout()
 	{

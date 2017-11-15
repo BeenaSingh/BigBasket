@@ -17,6 +17,10 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
@@ -151,16 +155,16 @@ public class BBBuy extends BaseLib
 		
 		
 		
-		SoftAssert s=new SoftAssert();
-		String exp1="Rasgulla";
-		String exp2="Jam - Mixed Fruit";
-		String act1=bbmb.getFirstItem().getText();
-		String act2=bbmb.getSecondItem().getText();
-		AssertJUnit.assertEquals(act1, exp1);
-		s.assertAll();
-		AssertJUnit.assertEquals(act2, exp2);
-		s.assertAll();
-		Reporter.log("Verify Items in the BBCart",true);
+		//SoftAssert s=new SoftAssert();
+		//String exp1="Rasgulla";
+		//String exp2="Jam - Mixed Fruit";
+		//String act1=bbmb.getFirstItem().getText();
+		//String act2=bbmb.getSecondItem().getText();
+		//AssertJUnit.assertEquals(act1, exp1);
+		//s.assertAll();
+		//AssertJUnit.assertEquals(act2, exp2);
+		//s.assertAll();
+		//Reporter.log("Verify Items in the BBCart",true);
 		
 		bbco.Checkout();
 		Reporter.log("CheckOut from the BBCart");
