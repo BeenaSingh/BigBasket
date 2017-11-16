@@ -82,7 +82,8 @@ public class BaseLib extends ExcelLib implements Constants {
 		// System.out.println(ExUserPassword);
 		 
 		 ActionLib actl = PageFactory.initElements(driver, ActionLib.class);
-		 actl.waitimp(); bbh.getUsername().sendKeys(ExUserEmailID);
+		 actl.waitimp(); 
+		 bbh.getUsername().sendKeys(ExUserEmailID);
 		 bbh.getPassword().sendKeys(ExUserPassword);
 		 
 		 bbh.getLoginButton().click();
@@ -90,6 +91,8 @@ public class BaseLib extends ExcelLib implements Constants {
 		 Thread.sleep(20000);
 		 driver.navigate().refresh();
 		//bbh.ContinuePopup();
+		 ActionLib actlib=PageFactory.initElements(driver, ActionLib.class);
+		 actlib.waitimp();
 		 
 		 Reporter.log("Login Function");
 		

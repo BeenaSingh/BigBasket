@@ -1,6 +1,9 @@
 package TestScripts;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
@@ -147,11 +150,14 @@ public class BBBuy extends BaseLib
 		//bbpdt.AddToBasket();
 		//Reporter.log("Item added to Basket", true);
 		
-		bbpdt.BBCart();
+		WebElement BBCartHover=bbpdt.getBBCart();
+		actlib.MouseAction(BBCartHover);
 		Reporter.log("Cart No increases", true);
+		Thread.sleep(2000);
 		
 		bbpdt.BBViewandCheckout();
-		Reporter.log("Cart Checkout", true);
+		Reporter.log("BBMyBaket View and Checkout", true);
+		
 		
 		
 		
@@ -165,21 +171,26 @@ public class BBBuy extends BaseLib
 		//AssertJUnit.assertEquals(act2, exp2);
 		//s.assertAll();
 		//Reporter.log("Verify Items in the BBCart",true);
-		
+		Thread.sleep(4000);
 		bbco.Checkout();
-		Reporter.log("CheckOut from the BBCart");
+		Reporter.log("CheckOut from the BBCart",true);
 		
+		Thread.sleep(7000);
 		String ContactNo=ex.getExcelData("BBSheet",7,1);
+		System.out.println(ContactNo);
 		bbcoa.getContactNo().sendKeys(ContactNo);
 		Reporter.log("ContactNo Entered",true);
 		
+		
 		String HouseNo=ex.getExcelData("BBSheet",8,1);
 		bbcoa.getHouseNo().sendKeys(HouseNo);
+		System.out.println(HouseNo);
 		Reporter.log("HouseNo Entered",true);
 		
 		
 		bbcoa.AddressSave();
 		Reporter.log("Address Save",true);
+		Thread.sleep(4000);
 		
 		
 		actlib.Alert("dismiss");
@@ -209,10 +220,7 @@ public class BBBuy extends BaseLib
 		bbspcdt.AddToMyBasketSpeciality();
 		Reporter.log("BBSpeciality Sweets and Savouries Item Added to MyBasket",true);
 		
-	   
-		
-	
-		
+
 	}
 
 
