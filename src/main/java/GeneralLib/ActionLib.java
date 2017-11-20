@@ -53,6 +53,15 @@ public class ActionLib extends BaseLib
 
     }
 	
+	public void scrollUpBy(String horizontalvalue, String verticalvalue)
+    {
+        int hvalue=Integer.parseInt(horizontalvalue);
+        int vvalue=Integer.parseInt(verticalvalue);
+        JavascriptExecutor js=(JavascriptExecutor)BaseLib.driver;
+        js.executeScript("window.scrollBy("+hvalue+","+vvalue+")");
+
+    }
+	
 	public void VerifyTest(WebElement element)
 	{
 		WebDriverWait wait=new WebDriverWait(BaseLib.driver, 10);

@@ -28,6 +28,25 @@ public class BBCheckoutAddress {
 	@FindBy(xpath="//input[@name='address1']")
 	private WebElement HouseNo;
 	
+	@FindBy(xpath="//button[.='Cancel']")
+	private WebElement CancelPop;
+
+	public WebElement getCancelPop() {
+		return CancelPop;
+	}
+	
+	@FindBy(xpath="//img[@src='//www.bigbasket.com/static/v1985/checkoutResponsive/img/bb_logo.png']")
+	private WebElement BBLogoForLogout;
+
+	public WebElement getBBLogoForLogout() {
+		return BBLogoForLogout;
+	}
+	public void BBLogoForLout()
+	{
+		BBLogoForLogout.click();
+	}
+	
+	
 	//@FindBy(xpath="")
 //	private WebElement ;
 	

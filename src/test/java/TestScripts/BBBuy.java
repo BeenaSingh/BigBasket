@@ -2,70 +2,14 @@ package TestScripts;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
-import org.testng.annotations.Test;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.Assert;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import static org.testng.Assert.assertEquals;
+
+
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
-import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
+
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -86,6 +30,8 @@ import ObjectRepo.BBSpecialityProductDetail;
 public class BBBuy extends BaseLib 
 {
 	
+	
+	
 	BBHome bbh;
 	BBProductList bbpdl;
 	BBProductDetail bbpdt;
@@ -100,25 +46,27 @@ public class BBBuy extends BaseLib
 	String exp;
 	String act;
 	
-	
+  
 	public ExtentTest logger;
 	
 	@Test
 	public void BBBuySweets() throws Throwable
 	{
-		     bbh=PageFactory.initElements(driver, BBHome.class);
-		     bbpdl=PageFactory.initElements(driver, BBProductList.class);
-			 actlib=PageFactory.initElements(driver, ActionLib.class);
-			 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-			 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-			 bbco=PageFactory.initElements(driver, BBCheckout.class);
-			 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-			 ex=PageFactory.initElements(driver, ExcelLib.class);
-			 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-			 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-			 bp=PageFactory.initElements(driver, BasePage.class);
-		 
-		Thread.sleep(5000);
+		    
+		
+	    bbh=PageFactory.initElements(driver, BBHome.class);
+	    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+		 actlib=PageFactory.initElements(driver, ActionLib.class);
+		 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+		 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+		 bbco=PageFactory.initElements(driver, BBCheckout.class);
+		 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+		 ex=PageFactory.initElements(driver, ExcelLib.class);
+		 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+		 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+		 bp=PageFactory.initElements(driver, BasePage.class);
+		
+	Thread.sleep(5000);
 		log.info("Sweet Search");
 		
 		//logger.log(LogStatus.INFO, "Enter Sweets in search Box");
@@ -136,10 +84,7 @@ public class BBBuy extends BaseLib
 		Reporter.log("Sweet product is displayed", true);
 		
 		try{
-			//String Add=bbpdt.
-			//bbpdt.AddToBasket();
-			//Reporter.log("Item added to Basket", true);
-			
+						
 			bbpdt.AddTo1InBasket();
 			Reporter.log("1 Item added to Basket", true);
 		}
@@ -175,7 +120,7 @@ public class BBBuy extends BaseLib
 		bbco.Checkout();
 		Reporter.log("CheckOut from the BBCart",true);
 		
-		Thread.sleep(7000);
+		Thread.sleep(10000);
 		String ContactNo=ex.getExcelData("BBSheet",7,1);
 		System.out.println(ContactNo);
 		bbcoa.getContactNo().sendKeys(ContactNo);
@@ -193,16 +138,42 @@ public class BBBuy extends BaseLib
 		Thread.sleep(4000);
 		
 		
-		actlib.Alert("dismiss");
+		//actlib.Alert("dismiss");
+		bbcoa.getCancelPop().click();
 		Reporter.log("ContactCancelPopup",true);
+		
+		//Scroll Up
+		actlib.scrollUpBy("0", "-150");
+		Reporter.log("Scrolled Up",true);
+		
+		//HomePage to Logout
+		Thread.sleep(3000);
+		bbcoa.BBLogoForLout();
+		Reporter.log("BBLogout",true);
 		
 		
 	}
 	
 	
+	
 	@Test
 	public void BBAddToMyBasket() throws Throwable
 	{
+		
+		
+	    bbh=PageFactory.initElements(driver, BBHome.class);
+	    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+		 actlib=PageFactory.initElements(driver, ActionLib.class);
+		 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+		 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+		 bbco=PageFactory.initElements(driver, BBCheckout.class);
+		 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+		 ex=PageFactory.initElements(driver, ExcelLib.class);
+		 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+		 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+		 bp=PageFactory.initElements(driver, BasePage.class);
+
+			 
 		log.info("AddTo MyBasket");
 		Thread.sleep(5000);
 		bbh.BBSpecialityTabClick();
@@ -228,6 +199,21 @@ public class BBBuy extends BaseLib
 @Test
 public void BBEmptyBasket() throws Throwable
 {
+	
+    bbh=PageFactory.initElements(driver, BBHome.class);
+    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+	 actlib=PageFactory.initElements(driver, ActionLib.class);
+	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+	 bbco=PageFactory.initElements(driver, BBCheckout.class);
+	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+	 ex=PageFactory.initElements(driver, ExcelLib.class);
+	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+	 bp=PageFactory.initElements(driver, BasePage.class);
+	
+	
+	Thread.sleep(5000);
 	log.info("BBEmpty Basket");
 	Thread.sleep(5000);
 	bbpdt.BBCart();
@@ -245,6 +231,20 @@ public void BBEmptyBasket() throws Throwable
 @Test
 public void BBIncreaseItemQuantity() throws Throwable
 {
+	
+    bbh=PageFactory.initElements(driver, BBHome.class);
+    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+	 actlib=PageFactory.initElements(driver, ActionLib.class);
+	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+	 bbco=PageFactory.initElements(driver, BBCheckout.class);
+	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+	 ex=PageFactory.initElements(driver, ExcelLib.class);
+	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+	 bp=PageFactory.initElements(driver, BasePage.class);
+	
+	Thread.sleep(5000);
 	log.info("BBIncreaseItemQuantity");
 	Thread.sleep(5000);
 	
@@ -276,6 +276,20 @@ public void BBIncreaseItemQuantity() throws Throwable
 @Test
 public void BBDecreaseItemQuantity() throws Throwable
 {
+	
+    bbh=PageFactory.initElements(driver, BBHome.class);
+    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+	 actlib=PageFactory.initElements(driver, ActionLib.class);
+	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+	 bbco=PageFactory.initElements(driver, BBCheckout.class);
+	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+	 ex=PageFactory.initElements(driver, ExcelLib.class);
+	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+	 bp=PageFactory.initElements(driver, BasePage.class);
+	
+	Thread.sleep(5000);
 	log.info("BBDecreaseItemQuantity");
 	Thread.sleep(5000);
 	bbspcdt.AddToMyBasketSpeciality();
@@ -291,6 +305,20 @@ public void BBDecreaseItemQuantity() throws Throwable
 @Test
 public void BBRemoveItemFromMyBasket() throws Throwable
 {
+	
+    bbh=PageFactory.initElements(driver, BBHome.class);
+    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+	 actlib=PageFactory.initElements(driver, ActionLib.class);
+	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+	 bbco=PageFactory.initElements(driver, BBCheckout.class);
+	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+	 ex=PageFactory.initElements(driver, ExcelLib.class);
+	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+	 bp=PageFactory.initElements(driver, BasePage.class);
+
+	Thread.sleep(5000);
 	log.info("BBRemoveItemFromMyBasket");
 	Thread.sleep(5000);
 	bbh.BBSpecialityTabClick();
@@ -318,6 +346,20 @@ public void BBRemoveItemFromMyBasket() throws Throwable
 @Test
 public void BBCancelMyOrder() throws Throwable
 {
+	
+    bbh=PageFactory.initElements(driver, BBHome.class);
+    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+	 actlib=PageFactory.initElements(driver, ActionLib.class);
+	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+	 bbco=PageFactory.initElements(driver, BBCheckout.class);
+	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+	 ex=PageFactory.initElements(driver, ExcelLib.class);
+	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+	 bp=PageFactory.initElements(driver, BasePage.class);
+
+	Thread.sleep(5000);
 	log.info("BBCancelMyOrder");
 	Thread.sleep(5000);
 	WebElement UserLink=bbh.getLoginLink();
@@ -334,6 +376,20 @@ public void BBCancelMyOrder() throws Throwable
 @Test
 public void BBFilterOnprice() throws Throwable
 {
+	
+    bbh=PageFactory.initElements(driver, BBHome.class);
+    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+	 actlib=PageFactory.initElements(driver, ActionLib.class);
+	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+	 bbco=PageFactory.initElements(driver, BBCheckout.class);
+	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+	 ex=PageFactory.initElements(driver, ExcelLib.class);
+	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+	 bp=PageFactory.initElements(driver, BasePage.class);
+
+	Thread.sleep(5000);
 	log.info("BBFilterOnPrice");
 	Thread.sleep(5000);
 	bbh.BBSpecialityTabClick();
@@ -362,6 +418,20 @@ public void BBFilterOnprice() throws Throwable
 @Test
 public void BBFilterOnFlavour() throws Throwable
 {
+	
+    bbh=PageFactory.initElements(driver, BBHome.class);
+    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+	 actlib=PageFactory.initElements(driver, ActionLib.class);
+	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+	 bbco=PageFactory.initElements(driver, BBCheckout.class);
+	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+	 ex=PageFactory.initElements(driver, ExcelLib.class);
+	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+	 bp=PageFactory.initElements(driver, BasePage.class);
+
+	Thread.sleep(5000);
 	log.info("BBFilterOnFlavour");
 	Thread.sleep(5000);
 	bbh.BBSpecialityTabClick();
@@ -386,6 +456,20 @@ public void BBFilterOnFlavour() throws Throwable
 @Test
 public void BBFilterOnContents() throws Throwable
 {
+	
+    bbh=PageFactory.initElements(driver, BBHome.class);
+    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+	 actlib=PageFactory.initElements(driver, ActionLib.class);
+	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+	 bbco=PageFactory.initElements(driver, BBCheckout.class);
+	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+	 ex=PageFactory.initElements(driver, ExcelLib.class);
+	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+	 bp=PageFactory.initElements(driver, BasePage.class);
+
+	Thread.sleep(5000);
 	log.info("BBFilterOnContents");
 	
 	Thread.sleep(5000);
@@ -417,6 +501,20 @@ public void BBFilterOnContents() throws Throwable
 @Test
 public void BBMoreStores() throws Throwable
 {
+	
+    bbh=PageFactory.initElements(driver, BBHome.class);
+    bbpdl=PageFactory.initElements(driver, BBProductList.class);
+	 actlib=PageFactory.initElements(driver, ActionLib.class);
+	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
+	 bbco=PageFactory.initElements(driver, BBCheckout.class);
+	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+	 ex=PageFactory.initElements(driver, ExcelLib.class);
+	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+	 bp=PageFactory.initElements(driver, BasePage.class);
+
+	Thread.sleep(5000);
 	log.info("BBMoreStores");
 	Thread.sleep(5000);
 	WebElement MoreStoreele=bbh.getBBMoreStoresTab();

@@ -11,14 +11,15 @@
           <include name="BBIncreaseItemQuantity"/>
           <include name="BBDecreaseItemQuantity"/>
           <include name="BBFilterOnFlavour"/>
-          <include name="BBBuySweets"/>
           <include name="BBCancelMyOrder"/>
           <include name="BBEmptyBasket"/>
           <include name="configBeforeMethod"/>
-          <include name="BBMoreStores"/>
           <include name="confiBeforeSuite"/>
           <include name="configBeforeClass"/>
+          <include name="configAfterMethod"/>
           <include name="BBAddToMyBasket"/>
+          <include name="configAfterClass"/>
+          <include name="configAfterSuite"/>
         </methods>
       </class> <!-- TestScripts.BBBuy -->
     </classes>
