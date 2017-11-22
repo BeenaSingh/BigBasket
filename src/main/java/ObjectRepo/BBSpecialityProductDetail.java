@@ -1,12 +1,22 @@
 package ObjectRepo;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class BBSpecialityProductDetail 
+import GeneralLib.BasePage;
+
+public class BBSpecialityProductDetail extends BasePage
 {
 	
-	@FindBy(xpath="//a[@class='category-url category-arrow '])[1]")
+	
+	public BBSpecialityProductDetail(WebDriver driver) {
+		super(driver);
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath="//a[contains(text(),'Adyar Anand Bhavan Sweets and Snacks, Koramangala')]")
 	private WebElement SelectStore;
 
 	public WebElement getSelectStore() 

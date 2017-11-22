@@ -85,3 +85,95 @@
 2017-11-16 16:40:58 INFO  properties:122 - Sweet Search
 2017-11-16 16:47:49 INFO  properties:206 - AddTo MyBasket
 2017-11-16 16:50:18 INFO  properties:122 - Sweet Search
+2017-11-20 11:37:55 INFO  properties:206 - AddTo MyBasket
+2017-11-20 11:39:01 INFO  properties:122 - Sweet Search
+2017-11-20 12:31:18 INFO  properties:206 - AddTo MyBasket
+2017-11-20 12:32:26 INFO  properties:122 - Sweet Search
+2017-11-20 12:43:20 INFO  properties:207 - AddTo MyBasket
+2017-11-20 12:44:25 INFO  properties:122 - Sweet Search
+2017-11-20 12:50:35 INFO  properties:207 - AddTo MyBasket
+2017-11-20 12:51:41 INFO  properties:322 - BBCancelMyOrder
+2017-11-20 12:52:48 INFO  properties:280 - BBDecreaseItemQuantity
+2017-11-20 12:54:47 INFO  properties:232 - BBEmpty Basket
+2017-11-20 12:55:36 INFO  properties:208 - AddTo MyBasket
+2017-11-20 12:56:00 INFO  properties:390 - BBFilterOnContents
+2017-11-20 12:56:43 INFO  properties:323 - BBCancelMyOrder
+2017-11-20 12:56:56 INFO  properties:366 - BBFilterOnFlavour
+2017-11-20 12:57:38 INFO  properties:281 - BBDecreaseItemQuantity
+2017-11-20 13:00:32 INFO  properties:209 - AddTo MyBasket
+2017-11-20 13:02:24 INFO  properties:324 - BBCancelMyOrder
+2017-11-20 13:03:35 INFO  properties:282 - BBDecreaseItemQuantity
+2017-11-20 13:04:41 INFO  properties:234 - BBEmpty Basket
+2017-11-20 13:11:53 INFO  properties:209 - AddTo MyBasket
+2017-11-20 13:12:50 INFO  properties:123 - Sweet Search
+2017-11-20 15:03:35 INFO  properties:167 - AddTo MyBasket
+2017-11-20 15:04:57 INFO  properties:68 - Sweet Search
+2017-11-20 15:23:31 INFO  properties:171 - AddTo MyBasket
+2017-11-20 15:24:56 INFO  properties:68 - Sweet Search
+2017-11-20 15:31:53 INFO  properties:175 - AddTo MyBasket
+2017-11-20 15:33:20 INFO  properties:68 - Sweet Search
+2017-11-20 15:39:00 INFO  properties:176 - AddTo MyBasket
+2017-11-20 15:40:10 INFO  properties:68 - Sweet Search
+2017-11-20 15:42:21 INFO  properties:297 - BBCancelMyOrder
+2017-11-20 15:44:02 INFO  properties:253 - BBDecreaseItemQuantity
+2017-11-20 15:55:26 INFO  properties:190 - AddTo MyBasket
+2017-11-20 15:56:33 INFO  properties:70 - Sweet Search
+2017-11-20 15:58:28 INFO  properties:376 - BBCancelMyOrder
+2017-11-20 15:59:43 INFO  properties:306 - BBDecreaseItemQuantity
+2017-11-20 16:00:51 INFO  properties:230 - BBEmpty Basket
+2017-11-20 16:02:05 INFO  properties:486 - BBFilterOnContents
+2017-11-20 16:03:25 INFO  properties:448 - BBFilterOnFlavour
+2017-11-20 16:04:36 INFO  properties:406 - BBFilterOnPrice
+2017-11-20 16:07:04 INFO  properties:261 - BBIncreaseItemQuantity
+2017-11-20 16:09:51 INFO  properties:531 - BBMoreStores
+2017-11-20 16:10:55 INFO  properties:335 - BBRemoveItemFromMyBasket
+2017-11-21 10:21:32 INFO  properties:70 - Sweet Search
+2017-11-21 10:26:19 INFO  properties:177 - AddTo MyBasket
+2017-11-21 10:29:03 INFO  properties:217 - BBEmpty Basket
+2017-11-21 14:22:48 INFO  properties:70 - Sweet Search
+2017-11-21 14:27:53 INFO  properties:177 - AddTo MyBasket
+2017-11-21 16:44:33 INFO  properties:87 - Sweet Search
+2017-11-21 16:49:26 INFO  properties:187 - AddTo MyBasket
+2017-11-21 16:52:04 INFO  properties:220 - BBEmpty Basket
+2017-11-21 16:54:42 INFO  properties:246 - BBIncreaseItemQuantity
+2017-11-21 18:19:30 INFO  properties:87 - Sweet Search
+2017-11-21 18:34:41 INFO  properties:87 - Sweet Search
+2017-11-21 18:44:01 INFO  properties:87 - Sweet Search
+2017-11-21 18:49:31 INFO  properties:187 - AddTo MyBasket
+2017-11-21 18:52:12 INFO  properties:220 - BBEmpty Basket
+2017-11-22 11:59:53 INFO  properties:87 - Sweet Search
+2017-11-22 12:04:34 INFO  properties:187 - AddTo MyBasket
+2017-11-22 12:07:21 INFO  properties:220 - BBEmpty Basket
+2017-11-22 12:10:03 INFO  properties:246 - BBIncreaseItemQuantity
+2017-11-22 12:12:23 INFO  properties:285 - BBDecreaseItemQuantity
+2017-11-22 12:14:42 INFO  properties:314 - BBRemoveItemFromMyBasket
+2017-11-22 12:17:20 INFO  properties:355 - BBCancelMyOrder
+2017-11-22 12:19:28 INFO  properties:385 - BBFilterOnPrice
+2017-11-22 12:22:19 INFO  properties:427 - BBFilterOnFlavour
+2017-11-22 12:25:01 INFO  properties:465 - BBFilterOnContents
+2017-11-22 12:27:44 INFO  properties:510 - BBMoreStores
+2017-11-22 12:30:27 INFO  properties:87 - Sweet Search
+2017-11-22 12:34:14 INFO  properties:195 - AddTo MyBasket
+2017-11-22 12:36:57 INFO  properties:228 - BBEmpty Basket
+2017-11-22 12:43:19 INFO  properties:87 - Sweet Search
+2017-11-22 12:47:54 INFO  properties:195 - AddTo MyBasket
+2017-11-22 12:48:20 INFO  properties:198 - BBSpeciality Tab Clicked
+2017-11-22 12:54:40 INFO  properties:195 - AddTo MyBasket
+2017-11-22 12:55:06 INFO  properties:198 - BBSpeciality Tab Clicked
+2017-11-22 12:59:35 INFO  properties:195 - AddTo MyBasket
+2017-11-22 13:00:04 INFO  properties:198 - BBSpeciality Tab Clicked
+2017-11-22 13:02:57 INFO  properties:195 - AddTo MyBasket
+2017-11-22 13:03:23 INFO  properties:198 - BBSpeciality Tab Clicked
+2017-11-22 13:09:56 INFO  properties:489 - BBFilterOnContents
+2017-11-22 14:37:47 INFO  properties:489 - BBFilterOnContents
+2017-11-22 14:45:41 INFO  properties:196 - AddTo MyBasket
+2017-11-22 14:46:07 INFO  properties:199 - BBSpeciality Tab Clicked
+2017-11-22 14:53:58 INFO  properties:197 - AddTo MyBasket
+2017-11-22 14:54:24 INFO  properties:200 - BBSpeciality Tab Clicked
+2017-11-22 15:02:53 INFO  properties:197 - BBAddTo MyBasket
+2017-11-22 15:30:39 INFO  properties:197 - BBAddTo MyBasket
+2017-11-22 16:44:27 INFO  properties:197 - BBAddTo MyBasket
+2017-11-22 16:47:16 INFO  properties:197 - BBAddTo MyBasket
+2017-11-22 17:20:19 INFO  properties:180 - BBAddTo MyBasket
+2017-11-22 17:55:28 INFO  properties:193 - BBAddTo MyBasket
+2017-11-22 18:05:45 INFO  properties:187 - BBAddTo MyBasket

@@ -5,19 +5,31 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.interactions.Actions;
 
-public class ActionLib extends BaseLib 
+public class ActionLib 
+
 {
+	public WebDriver driver; 		
 	
-	public void MouseAction(WebElement welement)
+	
+	
+	public ActionLib(WebDriver driver)
+	{
+		this.driver=driver;
+		
+	}
+	
+	public void MouseAction(WebElement webelement)
 	{
 		Actions act=new Actions(driver);
-		act.moveToElement(welement);
+		act.moveToElement(webelement);
 		act.perform();
 	}
 	

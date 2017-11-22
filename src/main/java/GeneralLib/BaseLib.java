@@ -18,19 +18,25 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
 import ObjectRepo.BBHome;
 
-public class BaseLib extends ExcelLib implements Constants {
+public class BaseLib implements Constants {
+	
+
+	
+
+	
 
 	public static WebDriver driver;
 
 	public ExtentReports extent;
 	public Logger log;
-	
 
 	public BBHome bbh;
-	// public Logger log = Logger.getLogger("/BB/Logger/Logs.log");
+	public ExtentTest logger;
+	
 
 	@BeforeSuite
 	public void confiBeforeSuite() {
@@ -53,12 +59,12 @@ public class BaseLib extends ExcelLib implements Constants {
 		if (Constants.Browser.equals("Firefox")) {
 			System.setProperty("webdriver.gecko.driver", Constants.GeckoDriver);
 			driver = new FirefoxDriver();
-			bbh = PageFactory.initElements(driver, BBHome.class);
+			bbh = new BBHome(driver);
 			
 		} else if ((Constants.Browser.equals("Chrome"))) {
 			System.setProperty("webdriver.chrome.driver", "/home/tyss/Downloads/chromedriver");
 			driver = new ChromeDriver();
-			bbh = PageFactory.initElements(driver, BBHome.class);
+			bbh = new BBHome(driver);
 			 
 		}
 		Reporter.log("Launch Browser", true);
@@ -68,15 +74,16 @@ public class BaseLib extends ExcelLib implements Constants {
 	public void configBeforeMethod() throws Throwable {
 		
 		driver.manage().window().maximize();
-		driver.get(URl);
+		driver.get(Constants.URl);
 		Thread.sleep(5000);
 
 		
 		bbh.loginlink();
 
-		ExcelLib ex = PageFactory.initElements(driver, ExcelLib.class);
-		 String ExUserEmailID = ex.getExcelData("BBSheet", 4, 1);
-		 String ExUserPassword = ex.getExcelData("BBSheet", 5, 1);
+		//ExcelLib ex = PageFactory.initElements(driver, ExcelLib.class);
+		
+		 String ExUserEmailID = ExcelLib.getExcelData("BBSheet", 4, 1);
+		 String ExUserPassword = ExcelLib.getExcelData("BBSheet", 5, 1);
 		 
 		// System.out.println(ExUserEmailID);
 		// System.out.println(ExUserPassword);
@@ -94,7 +101,9 @@ public class BaseLib extends ExcelLib implements Constants {
 		 ActionLib actlib=PageFactory.initElements(driver, ActionLib.class);
 		 actlib.waitimp();
 		 
-		 Reporter.log("Login Function");
+		 
+		 Reporter.log("Login to Account");
+		 System.out.println(driver.getTitle());
 		
 
 	}
@@ -109,7 +118,7 @@ public class BaseLib extends ExcelLib implements Constants {
 		Thread.sleep(2000);
 
 		bbh.logout();
-		Reporter.log("Logout Function");
+		Reporter.log("Logout of Account");
 
 	}
 

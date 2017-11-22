@@ -5,10 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BBHome {
+import GeneralLib.BasePage;
+
+public class BBHome extends BasePage {
+	
+
+
 
 	public BBHome(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+		super(driver);
+	    PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath = "//li[@class='auth']//a[.='Login']")
@@ -80,7 +86,7 @@ public class BBHome {
 		return password;
 	}
 	
-	@FindBy(xpath="//span[text()='BB SPECIALTY']")
+	@FindBy(xpath="//a[@class='bb-storedesktop-link']")
 	private WebElement BBSpecialityTab;
 
 

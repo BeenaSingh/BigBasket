@@ -1,11 +1,17 @@
 package TestScripts;
 
+
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 
 
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
@@ -17,6 +23,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import GeneralLib.ActionLib;
 import GeneralLib.BaseLib;
 import GeneralLib.BasePage;
+import GeneralLib.Constants;
 import GeneralLib.ExcelLib;
 import ObjectRepo.BBCheckout;
 import ObjectRepo.BBCheckoutAddress;
@@ -26,25 +33,10 @@ import ObjectRepo.BBProductDetail;
 import ObjectRepo.BBProductList;
 import ObjectRepo.BBSpeciality;
 import ObjectRepo.BBSpecialityProductDetail;
-
+@Test
 public class BBBuy extends BaseLib 
 {
-	
-	
-	
-	BBHome bbh;
-	BBProductList bbpdl;
-	BBProductDetail bbpdt;
-	BBMyBasket bbmb;
-	BBCheckout bbco;
-	BBCheckoutAddress bbcoa;
-	ExcelLib ex;
-	BBSpeciality bbspc;
-	BBSpecialityProductDetail bbspcdt;
-	ActionLib actlib;
-	BasePage bp;
-	String exp;
-	String act;
+
 	
   
 	public ExtentTest logger;
@@ -53,20 +45,34 @@ public class BBBuy extends BaseLib
 	public void BBBuySweets() throws Throwable
 	{
 		    
+		BBHome bbh=new BBHome(driver);
+		BBProductList bbpdl=new BBProductList(driver);
+		ActionLib actlib=new ActionLib(driver);
+	    BBProductDetail bbpdt=new BBProductDetail(driver);
+		BBMyBasket bbmb=new BBMyBasket(driver);
+	    BBCheckout bbco=new BBCheckout(driver);
+	    BBCheckoutAddress bbcoa=new BBCheckoutAddress(driver);
+	    ExcelLib ex=new ExcelLib(driver);
+	    BBSpeciality bbspc=new BBSpeciality(driver);
+        BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+        BasePage bp=new BasePage(driver);
+        
+        
+    	
+     	
+         /*bbh=PageFactory.initElements(driver, BBHome.class);
+         bbpdl=PageFactory.initElements(driver, BBProductList.class);
+    	 actlib=PageFactory.initElements(driver, ActionLib.class);
+    	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
+    	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);Online Grocery Shopping and Online Supermarket in India - Bigbasket
+    	 bbco=PageFactory.initElements(driver, BBCheckout.class);
+    	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
+    	 ex=PageFactory.initElements(driver, ExcelLib.class);
+    	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
+    	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
+    	 bp=PageFactory.initElements(driver, BasePage.class);*/
 		
-	    bbh=PageFactory.initElements(driver, BBHome.class);
-	    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-		 actlib=PageFactory.initElements(driver, ActionLib.class);
-		 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-		 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-		 bbco=PageFactory.initElements(driver, BBCheckout.class);
-		 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-		 ex=PageFactory.initElements(driver, ExcelLib.class);
-		 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-		 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-		 bp=PageFactory.initElements(driver, BasePage.class);
-		
-	Thread.sleep(5000);
+	    Thread.sleep(5000);
 		log.info("Sweet Search");
 		
 		//logger.log(LogStatus.INFO, "Enter Sweets in search Box");
@@ -114,7 +120,9 @@ public class BBBuy extends BaseLib
 		//AssertJUnit.assertEquals(act1, exp1);
 		//s.assertAll();
 		//AssertJUnit.assertEquals(act2, exp2);
-		//s.assertAll();
+		//s.assertAll();Online Grocery Shopping and Online Supermarket in India - Bigbasket
+
+
 		//Reporter.log("Verify Items in the BBCart",true);
 		Thread.sleep(4000);
 		bbco.Checkout();
@@ -148,10 +156,12 @@ public class BBBuy extends BaseLib
 		
 		//HomePage to Logout
 		Thread.sleep(3000);
+		
+
 		bbcoa.BBLogoForLout();
 		Reporter.log("BBLogout",true);
 		
-		
+		driver.navigate().to(Constants.URl);
 	}
 	
 	
@@ -160,24 +170,26 @@ public class BBBuy extends BaseLib
 	public void BBAddToMyBasket() throws Throwable
 	{
 		
-		
-	    bbh=PageFactory.initElements(driver, BBHome.class);
-	    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-		 actlib=PageFactory.initElements(driver, ActionLib.class);
-		 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-		 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-		 bbco=PageFactory.initElements(driver, BBCheckout.class);
-		 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-		 ex=PageFactory.initElements(driver, ExcelLib.class);
-		 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-		 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-		 bp=PageFactory.initElements(driver, BasePage.class);
+		BBHome bbh=new BBHome(driver);
+		BBProductList bbpdl=new BBProductList(driver);
+		ActionLib actlib=new ActionLib(driver);
+	    BBProductDetail bbpdt=new BBProductDetail(driver);
+		BBMyBasket bbmb=new BBMyBasket(driver);
+	    BBCheckout bbco=new BBCheckout(driver);
+	    BBCheckoutAddress bbcoa=new BBCheckoutAddress(driver);
+	    ExcelLib ex=new ExcelLib(driver);
+	    BBSpeciality bbspc=new BBSpeciality(driver);
+        BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+        BasePage bp=new BasePage(driver);
+	
 
 			 
-		log.info("AddTo MyBasket");
-		Thread.sleep(5000);
+		log.info("BBAddTo MyBasket");
+		Reporter.log("Add to my Basket",true);
+		Thread.sleep(9000);
 		bbh.BBSpecialityTabClick();
 		Reporter.log("BBSpeciality Tab Clicked",true);
+		
 		
 		bbspc.SweetSavouries();
 		Reporter.log("BBSpeciality Sweets and Savouries Clicked",true);
@@ -191,6 +203,8 @@ public class BBBuy extends BaseLib
 		bbspcdt.AddToMyBasketSpeciality();
 		Reporter.log("BBSpeciality Sweets and Savouries Item Added to MyBasket",true);
 		
+		
+		driver.navigate().to(Constants.URl);
 
 	}
 
@@ -200,18 +214,19 @@ public class BBBuy extends BaseLib
 public void BBEmptyBasket() throws Throwable
 {
 	
-    bbh=PageFactory.initElements(driver, BBHome.class);
-    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-	 actlib=PageFactory.initElements(driver, ActionLib.class);
-	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-	 bbco=PageFactory.initElements(driver, BBCheckout.class);
-	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-	 ex=PageFactory.initElements(driver, ExcelLib.class);
-	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-	 bp=PageFactory.initElements(driver, BasePage.class);
-	
+ 
+	BBHome bbh=new BBHome(driver);
+	BBProductList bbpdl=new BBProductList(driver);
+	ActionLib actlib=new ActionLib(driver);
+    BBProductDetail bbpdt=new BBProductDetail(driver);
+	BBMyBasket bbmb=new BBMyBasket(driver);
+    BBCheckout bbco=new BBCheckout(driver);
+    BBCheckoutAddress bbcoa=new BBCheckoutAddress(driver);
+    ExcelLib ex=new ExcelLib(driver);
+    BBSpeciality bbspc=new BBSpeciality(driver);
+    BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+    BasePage bp=new BasePage(driver);
+	 
 	
 	Thread.sleep(5000);
 	log.info("BBEmpty Basket");
@@ -225,6 +240,7 @@ public void BBEmptyBasket() throws Throwable
 	actlib.Alert("accept");
 	Reporter.log("BBMyBasket Emptied",true);
 	
+	//driver.navigate().to(Constants.URl);
 	
 }
 
@@ -232,17 +248,19 @@ public void BBEmptyBasket() throws Throwable
 public void BBIncreaseItemQuantity() throws Throwable
 {
 	
-    bbh=PageFactory.initElements(driver, BBHome.class);
-    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-	 actlib=PageFactory.initElements(driver, ActionLib.class);
-	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-	 bbco=PageFactory.initElements(driver, BBCheckout.class);
-	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-	 ex=PageFactory.initElements(driver, ExcelLib.class);
-	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-	 bp=PageFactory.initElements(driver, BasePage.class);
+  
+	BBHome bbh=new BBHome(driver);
+	BBProductList bbpdl=new BBProductList(driver);
+	ActionLib actlib=new ActionLib(driver);
+    BBProductDetail bbpdt=new BBProductDetail(driver);
+	BBMyBasket bbmb=new BBMyBasket(driver);
+    BBCheckout bbco=new BBCheckout(driver);
+    BBCheckoutAddress bbcoa=new BBCheckoutAddress(driver);
+    ExcelLib ex=new ExcelLib(driver);
+    BBSpeciality bbspc=new BBSpeciality(driver);
+    BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+    BasePage bp=new BasePage(driver);
+	
 	
 	Thread.sleep(5000);
 	log.info("BBIncreaseItemQuantity");
@@ -269,7 +287,7 @@ public void BBIncreaseItemQuantity() throws Throwable
 	bbmb.IncQty();
 	Reporter.log("Product Quantity Increased",true);
 	
-	
+	//driver.navigate().to(Constants.URl);
 }
 
 
@@ -277,17 +295,18 @@ public void BBIncreaseItemQuantity() throws Throwable
 public void BBDecreaseItemQuantity() throws Throwable
 {
 	
-    bbh=PageFactory.initElements(driver, BBHome.class);
-    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-	 actlib=PageFactory.initElements(driver, ActionLib.class);
-	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-	 bbco=PageFactory.initElements(driver, BBCheckout.class);
-	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-	 ex=PageFactory.initElements(driver, ExcelLib.class);
-	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-	 bp=PageFactory.initElements(driver, BasePage.class);
+	BBHome bbh=new BBHome(driver);
+	BBProductList bbpdl=new BBProductList(driver);
+	ActionLib actlib=new ActionLib(driver);
+    BBProductDetail bbpdt=new BBProductDetail(driver);
+	BBMyBasket bbmb=new BBMyBasket(driver);
+    BBCheckout bbco=new BBCheckout(driver);
+    BBCheckoutAddress bbcoa=new BBCheckoutAddress(driver);
+    ExcelLib ex=new ExcelLib(driver);
+    BBSpeciality bbspc=new BBSpeciality(driver);
+    BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+    BasePage bp=new BasePage(driver);
+
 	
 	Thread.sleep(5000);
 	log.info("BBDecreaseItemQuantity");
@@ -300,23 +319,23 @@ public void BBDecreaseItemQuantity() throws Throwable
 	
 	bbmb.DecQty();
 	Reporter.log("Product Quantity Decreased",true);
+	
+	//driver.navigate().to(Constants.URl);
 }
 
 @Test
 public void BBRemoveItemFromMyBasket() throws Throwable
 {
 	
-    bbh=PageFactory.initElements(driver, BBHome.class);
-    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-	 actlib=PageFactory.initElements(driver, ActionLib.class);
-	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-	 bbco=PageFactory.initElements(driver, BBCheckout.class);
-	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-	 ex=PageFactory.initElements(driver, ExcelLib.class);
-	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-	 bp=PageFactory.initElements(driver, BasePage.class);
+	BBHome bbh=new BBHome(driver);
+	
+    BBProductDetail bbpdt=new BBProductDetail(driver);
+	BBMyBasket bbmb=new BBMyBasket(driver);
+   
+   
+    BBSpeciality bbspc=new BBSpeciality(driver);
+    BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+  
 
 	Thread.sleep(5000);
 	log.info("BBRemoveItemFromMyBasket");
@@ -341,23 +360,25 @@ public void BBRemoveItemFromMyBasket() throws Throwable
 	
 	bbmb.RemoveFromBasket();
 	Reporter.log("BBRemoveFromMyBasket is Clicked and Item removed from the Basket",true);
+	
+//	driver.navigate().to(Constants.URl);
 		
 }
 @Test
 public void BBCancelMyOrder() throws Throwable
 {
 	
-    bbh=PageFactory.initElements(driver, BBHome.class);
-    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-	 actlib=PageFactory.initElements(driver, ActionLib.class);
-	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-	 bbco=PageFactory.initElements(driver, BBCheckout.class);
-	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-	 ex=PageFactory.initElements(driver, ExcelLib.class);
-	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-	 bp=PageFactory.initElements(driver, BasePage.class);
+	BBHome bbh=new BBHome(driver);
+	BBProductList bbpdl=new BBProductList(driver);
+	ActionLib actlib=new ActionLib(driver);
+    BBProductDetail bbpdt=new BBProductDetail(driver);
+	BBMyBasket bbmb=new BBMyBasket(driver);
+    BBCheckout bbco=new BBCheckout(driver);
+    BBCheckoutAddress bbcoa=new BBCheckoutAddress(driver);
+    ExcelLib ex=new ExcelLib(driver);
+    BBSpeciality bbspc=new BBSpeciality(driver);
+    BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+    BasePage bp=new BasePage(driver);
 
 	Thread.sleep(5000);
 	log.info("BBCancelMyOrder");
@@ -371,23 +392,25 @@ public void BBCancelMyOrder() throws Throwable
 	Reporter.log("BBMyOrdere is Selected",true);
 	
 	Reporter.log("BBCancel is cannot be done since there are no orders",true);
+	
+	//driver.navigate().to(Constants.URl);
 }
 
 @Test
 public void BBFilterOnprice() throws Throwable
 {
 	
-    bbh=PageFactory.initElements(driver, BBHome.class);
-    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-	 actlib=PageFactory.initElements(driver, ActionLib.class);
-	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-	 bbco=PageFactory.initElements(driver, BBCheckout.class);
-	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-	 ex=PageFactory.initElements(driver, ExcelLib.class);
-	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-	 bp=PageFactory.initElements(driver, BasePage.class);
+	BBHome bbh=new BBHome(driver);
+	BBProductList bbpdl=new BBProductList(driver);
+	ActionLib actlib=new ActionLib(driver);
+    BBProductDetail bbpdt=new BBProductDetail(driver);
+	BBMyBasket bbmb=new BBMyBasket(driver);
+    BBCheckout bbco=new BBCheckout(driver);
+    BBCheckoutAddress bbcoa=new BBCheckoutAddress(driver);
+    ExcelLib ex=new ExcelLib(driver);
+    BBSpeciality bbspc=new BBSpeciality(driver);
+    BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+    BasePage bp=new BasePage(driver);
 
 	Thread.sleep(5000);
 	log.info("BBFilterOnPrice");
@@ -413,23 +436,24 @@ public void BBFilterOnprice() throws Throwable
 	bbpdt.BBCart();
 	Reporter.log("BBMyBasket is Clicked",true);
 	
+//	driver.navigate().to(Constants.URl);
 }
 
 @Test
 public void BBFilterOnFlavour() throws Throwable
 {
 	
-    bbh=PageFactory.initElements(driver, BBHome.class);
-    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-	 actlib=PageFactory.initElements(driver, ActionLib.class);
-	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-	 bbco=PageFactory.initElements(driver, BBCheckout.class);
-	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-	 ex=PageFactory.initElements(driver, ExcelLib.class);
-	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-	 bp=PageFactory.initElements(driver, BasePage.class);
+	BBHome bbh=new BBHome(driver);
+	BBProductList bbpdl=new BBProductList(driver);
+	ActionLib actlib=new ActionLib(driver);
+    BBProductDetail bbpdt=new BBProductDetail(driver);
+	BBMyBasket bbmb=new BBMyBasket(driver);
+    BBCheckout bbco=new BBCheckout(driver);
+    BBCheckoutAddress bbcoa=new BBCheckoutAddress(driver);
+    ExcelLib ex=new ExcelLib(driver);
+    BBSpeciality bbspc=new BBSpeciality(driver);
+    BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+    BasePage bp=new BasePage(driver);
 
 	Thread.sleep(5000);
 	log.info("BBFilterOnFlavour");
@@ -451,23 +475,25 @@ public void BBFilterOnFlavour() throws Throwable
 	
 	bbspcdt.SelectFlavourRangeproduct();
 	Reporter.log("BBSpeciality  Flavour range Product is Selected",true);
+	
+	//driver.navigate().to(Constants.URl);
 }
 
 @Test
 public void BBFilterOnContents() throws Throwable
 {
 	
-    bbh=PageFactory.initElements(driver, BBHome.class);
-    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-	 actlib=PageFactory.initElements(driver, ActionLib.class);
-	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-	 bbco=PageFactory.initElements(driver, BBCheckout.class);
-	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-	 ex=PageFactory.initElements(driver, ExcelLib.class);
-	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-	 bp=PageFactory.initElements(driver, BasePage.class);
+	BBHome bbh=new BBHome(driver);
+	BBProductList bbpdl=new BBProductList(driver);
+	ActionLib actlib=new ActionLib(driver);
+    BBProductDetail bbpdt=new BBProductDetail(driver);
+	BBMyBasket bbmb=new BBMyBasket(driver);
+    BBCheckout bbco=new BBCheckout(driver);
+    BBCheckoutAddress bbcoa=new BBCheckoutAddress(driver);
+    ExcelLib ex=new ExcelLib(driver);
+    BBSpeciality bbspc=new BBSpeciality(driver);
+    BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+    BasePage bp=new BasePage(driver);
 
 	Thread.sleep(5000);
 	log.info("BBFilterOnContents");
@@ -495,30 +521,33 @@ public void BBFilterOnContents() throws Throwable
 	bbspcdt.SelectBBContentRangeAddToBB();
 	Reporter.log("BBSpeciality  Content range Product is Added to MyBasket",true);
 	
+	//driver.navigate().to(Constants.URl);
+	
 
 }
 
 @Test
 public void BBMoreStores() throws Throwable
 {
-	
-    bbh=PageFactory.initElements(driver, BBHome.class);
-    bbpdl=PageFactory.initElements(driver, BBProductList.class);
-	 actlib=PageFactory.initElements(driver, ActionLib.class);
-	 bbpdt=PageFactory.initElements(driver, BBProductDetail.class);
-	 bbmb=PageFactory.initElements(driver, BBMyBasket.class);
-	 bbco=PageFactory.initElements(driver, BBCheckout.class);
-	 bbcoa=PageFactory.initElements(driver, BBCheckoutAddress.class);
-	 ex=PageFactory.initElements(driver, ExcelLib.class);
-	 bbspc=PageFactory.initElements(driver, BBSpeciality.class);
-	 bbspcdt=PageFactory.initElements(driver, BBSpecialityProductDetail.class);
-	 bp=PageFactory.initElements(driver, BasePage.class);
+	BBHome bbh=new BBHome(driver);
+	BBProductList bbpdl=new BBProductList(driver);
+	ActionLib actlib=new ActionLib(driver);
+    BBProductDetail bbpdt=new BBProductDetail(driver);
+	BBMyBasket bbmb=new BBMyBasket(driver);
+    BBCheckout bbco=new BBCheckout(driver);
+    BBCheckoutAddress bbcoa=new BBCheckoutAddress(driver);
+    ExcelLib ex=new ExcelLib(driver);
+    BBSpeciality bbspc=new BBSpeciality(driver);
+    BBSpecialityProductDetail bbspcdt=new BBSpecialityProductDetail(driver);
+    BasePage bp=new BasePage(driver);
 
 	Thread.sleep(5000);
 	log.info("BBMoreStores");
 	Thread.sleep(5000);
 	WebElement MoreStoreele=bbh.getBBMoreStoresTab();
 	actlib.MouseAction(MoreStoreele);
+	
+	//driver.navigate().to(Constants.URl);
 }
 
 }
